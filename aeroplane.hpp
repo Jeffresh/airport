@@ -3,12 +3,13 @@
 
 #include<string>
 
-enum States{ENTRY, EXIT, WAITING};
+enum States{ARRIVE,TAKEOFF,WAITING,IDLE};
 
 class Aeroplane
 {
 public:
-	Aeroplane(std::string c, States s = WAITING):cod_{c},state_{s}{}
+	Aeroplane(){}
+	Aeroplane(std::string c, States s = IDLE):cod_{c},state_{s}{}
 	void state (States s){state_ = s;}
 	States state() const{ return state_;}
 	States state() { return state_;}

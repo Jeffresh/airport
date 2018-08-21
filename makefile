@@ -1,5 +1,5 @@
 CXX = clang++
-OBJS = aeroplane.hpp
+OBJS =  airport.o
 
 all: main
 

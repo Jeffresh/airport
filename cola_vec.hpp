@@ -1,3 +1,4 @@
+#ifndef COLA_VEC_HPP
 #define COLA_VEC_HPP
 #include <cassert>
 
@@ -30,7 +31,7 @@ private:
 
 template<typename T>
 inline Cola<T>::Cola(int tamaMax): 
-elementos(new [tamaMax+1]), 
+elementos(new T[tamaMax+1]), 
 Lmax(tamaMax+1),
 fin(-1)
 {}
@@ -46,7 +47,7 @@ Lmax (C.Lmax)
 }
 
 template<typename T>
-Cola<t>& Cola<T>::operator =(const Cola<T>& C)
+Cola<T>& Cola<T>::operator =(const Cola<T>& C)
 {
 
 	if(this!= &C) // evitar autoasignación
@@ -98,7 +99,7 @@ inline void Cola<T>::push(const T& x)
 
 
 template<typename T>
-inline const T& Cola<T>::frente() const{ assert(!vacia()); return *elemento;}
+inline const T& Cola<T>::frente() const{ assert(!vacia()); return *elementos;}
 
 template<typename T>
 inline Cola<T>::~Cola()
@@ -106,3 +107,5 @@ inline Cola<T>::~Cola()
 	delete [] elementos;
 }
 
+
+#endif

@@ -11,13 +11,20 @@ class Airport
 
 public:
 
+	Airport(): apron{11}, hangar{12}{}
+
+	void action(const std::string&, States);
+
+
+
 
 
 private:
 
+	Cola<Aeroplane> apron;
+	Cola<Aeroplane> hangar;
+
 };
-
-
 
 
 #endif
